@@ -11,7 +11,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.art.stuff.domain.ItemRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureMockMvc
