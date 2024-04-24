@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add location</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    </head>
+    <body>
+        <div  class="container">
+            <h1>Add location</h1>
+            <div>
+                <form th:object="${location}" th:action="@{savelocation}" action="#" method="post"
+                      class="form-horizontal form-control-sm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter name of the location"
+                               id="name" th:field="*{name}" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-success"/>
+                        <a class="btn btn-default" type="button" href="/stuff">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

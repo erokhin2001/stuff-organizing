@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title>Stuff List</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+        
+    </head>
+
+    <body>
+        <a href="/type" class="btn btn-success">Types</a>
+        <a href="/location" class="btn btn-success">Locations</a>
+        <div class="container">
+            <h1>Items</h1>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Type</th>
+                    <th>Location</th>
+                    <th>Fragility</th>
+                    <th>Checked</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr th:each = "item : ${items}">
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.quantity}"></td>
+                    <td th:text="${item.type}"></td>
+                    <td th:text="${item.location}"></td>
+                    <td th:text="${item.isFragile ? 'Fragile' : 'Not Fragile'}"></td>
+                    <td th:text="${item.isChecked ? '+' : '-'}"></td>
+                    <!-- <form th:object="${myForm}">
+                        <input type="checkbox" th:field="*{isChecked}" />
+                    </form> -->
+                    <td><a th:href="@{/delete/{id}(id=${item.itemId})}" class="btn btn-danger">Delete</a></td>
+                    <td><a th:href="@{/edit/{id}(id=${item.itemId})}" class="btn btn-default">Edit</a></td>
+                </tr>
+            </table>
+            <a href="/additem" class="btn btn-success">Add Item</a>
+            <form action="/logout" method="post">
+                <input type="submit" value="Log Out">
+            </form>
+
+        </div>
+    </body>
+</html>
