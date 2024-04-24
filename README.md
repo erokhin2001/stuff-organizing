@@ -4,3 +4,5 @@ i recently faced eviction and had to urgently leave my home. you can never know 
 
 the user would have to log in first to reach their list. there they can begin adding items, further edit and delete them. when adding an item they can mark which category an items falls to, where it is located, how fragile it is, and how necessary it is(how likely a person would keep it rather than throwing/giving it away). 
 
+in this SpingBoot project i'm using Thymeleaf templates for front end , MariaDB and Hibernate for data processes. just download the whole project and open it in your IDE. please check Java version that is installed on your machine, as the application might have difficulties launching. this one is using Java 19.
+
